@@ -3,7 +3,12 @@ header{
 }
 .col > a{
     display: inline;
+    font-size: 20px;
 }
-.col > form > button{
-    display: inline;
+#places{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+#webpage_name{
+    padding-right: 200px;
 }
