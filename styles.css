@@ -142,3 +142,30 @@ nav.navbar{
 	width: 3rem;
 	height: 3rem;
 }
+.checked{
+	color: orange;
+}
+.fa-star{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.fa-star:first-child{
+	margin-left: 10%;
+}
+button.new-post{
+	background-color: #114b5f;
+	color: white;
+	position: absolute;
+	right: 0;
+	margin-right: 5%;
+}
+button.new-post:hover{
+	background-color: #0e3b4b;
+	color: white;
+}
+button.new-post:active{
+	background-color: #0e3b4b;
+	color: white;
+	border-color: white;
+}
+
