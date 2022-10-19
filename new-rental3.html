@@ -23,7 +23,7 @@
                 <a class="nav-link header_button" href="index.html">Feed</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link header_button" href="#" id="places">Places</a>
+                <a class="nav-link header_button" href="list_places.html" id="places">Places</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link header_button" href="list_propi.html">Rentals</a> 
@@ -46,7 +46,7 @@
       <section>
         <div class="container">
             <p class="fw-bold" style="font-size:18px; margin-bottom: 20px">Register your accommodation on Top Trip and start receiving customers as soon as possible!</p>
-            <p style="margin-bottom:10px">Add information about the accommodation</p>
+            <p style="margin-bottom:10px">Add information about the accommodation.</p>
         </div>
 
         <div class="container">
@@ -174,8 +174,26 @@
                                 </div>
 
                                 <hr>
-                                
+                                <textarea name="text-post" cols="30" rows="5" class="form-control" placeholder="Accommodation description..." style="resize: none"></textarea>
+                                <div id="image-box" style="margin-top: 5px; text-align: center;margin-top: 10px;">
+                                  <label for="img-upload">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16" style="cursor: pointer; margin-top:80px">
+                                      <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                      <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+                                    </svg>
+                                  </label>
+                                  <input type="file" name="" id="img-upload" style="display: none; visibility: none;" accept="image/*">
+                                </div>
+
+                                <hr>
+                                <div class="input-group mb-3">
+                                  <span class="input-group-text">US$</span>
+                                  <input type="text" class="form-control">
+                                  <span class="input-group-text">.00</span>
+                                </div>
                             </form>
+                            
+                            <a class="log-sign-button" style="margin-left: 40%;">Next</a>
                         </div>
                     </div>
                 </div>

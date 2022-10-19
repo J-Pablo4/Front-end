@@ -8,48 +8,46 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="shadow mb-5">
-        <div class="container-fluid text-center">
-          <div class="row align-items-center">
-
-            <div class="col">
-              <a class="navbar-brand fw-bold" href="#" id="webpage_name" style="font-size: 30px">
-                <img src="LOGO.png" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
-                Top Trip
-              </a>
-            </div>
-            
-            <div class="col">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#" id="places">Places</a>
-              <a class="nav-link" href="#">Properties</a> 
-            </div>
-            
-            <div class="col">
-              <nav class="navbar">
-                <div class="container-fluid">
-                  <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                      </svg>
-                      </button>
-                  </form>
-                  <a href="#" class="btn" style="margin-left: 20px"> Sign up</a>
-                  <a href="#" class="btn btn-outline-success"> Log In</a>
-                </div>
-              </nav>
-            </div>
-          </div>
-        </div>     
-    </header>
+    <nav class="navbar navbar-expand-lg shadow-lg mb-5">
+      <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="index.html" id="webpage_name" style="font-size: 30px">
+              <img src="LOGO.png" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
+              Top Trip
+          </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link header_button" href="index.html">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header_button" href="#" id="places">Places</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header_button" href="list_propi.html">Rentals</a> 
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </button>
+          </form>
+          <a href="sign_up.html" class="btn" style="margin-left: 20px" id="sign_up_button"> Sign up</a>
+          <a href="log_in.html" class="btn" id="log_in_button"> Log In</a>
+        </div>
+      </div>
+    </nav>
 
 
-  <div class="container text-center">
+  <div class="container text-center" style="margin-top:100px">
     <div class="row align-items-start">
       <div class="col">
-        <a href="file:///C:/Users/adrid/OneDrive/Documentos/ITESO/7%C2%B0/Web/proyecto/list_propi.html">
+        <a href="list_propi.html">
           <div class="imagContainer">  
             <p id="texto-superior">Mazamitla</p>
             <img class='imag' src="https://ik.imgkit.net/3vlqs5axxjf/TAW/ik-seo/uploadedImages/All_Gateways/Mexico/Features/Mazalita%20Travel%20Guide_HERO/Mazalita-Travel-Guide_HERO.jpg?tr=w-1008%2Ch-567%2Cfo-auto">
@@ -57,7 +55,7 @@
         </a>
       </div>
       <div class="col">
-        <a href="file:///C:/Users/adrid/OneDrive/Documentos/ITESO/7%C2%B0/Web/proyecto/list_propi.html">
+        <a href="list_propi.html">
           <div class="imagContainer">
             <p id="texto-superior">Islas Marietas</p>
             <img class="imag" src="https://tipsparatuviaje.com/wp-content/uploads/2018/08/una-de-las-mejores-playas-de-mexico.jpg">
@@ -66,7 +64,7 @@
         </a>
       </div>
       <div class="col">
-        <a href="file:///C:/Users/adrid/OneDrive/Documentos/ITESO/7%C2%B0/Web/proyecto/list_propi.html">
+        <a href="list_propi.html">
           <div class="imagContainer">
             <p id="texto-superior">Comala</p>
             <img class="imag" src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSVoGddkmYg7vAQrqeMUOwS5BxTLzMYOLpV8fPovVD9TIVqS0fSKepTeVWOH_l3zu36">
@@ -76,7 +74,7 @@
     </div>
     <div class="row align-items-center">
       <div class="col">
-        <a href="file:///C:/Users/adrid/OneDrive/Documentos/ITESO/7%C2%B0/Web/proyecto/list_propi.html">
+        <a href="list_propi.html">
           <div class="imagContainer">
             <p id="texto-superior">Taxco</p>
             <img class="imag" src="https://taxcodealarcon.org/wp-content/uploads/2021/10/taxco-historia-700x467.jpg">
@@ -84,7 +82,7 @@
         </a>
       </div>
       <div class="col">
-        <a href="file:///C:/Users/adrid/OneDrive/Documentos/ITESO/7%C2%B0/Web/proyecto/list_propi.html">
+        <a href="list_propi.html">
           <div class="imagContainer">
             <p id="texto-superior">San Miguel Allende</p>
             <img class="imag" src="https://www.eluniversal.com.mx/sites/default/files/san_miguel_allende_3.jpg">
@@ -92,7 +90,7 @@
         </a>
       </div>
       <div class="col">
-        <a href="file:///C:/Users/adrid/OneDrive/Documentos/ITESO/7%C2%B0/Web/proyecto/list_propi.html">
+        <a href="list_propi.html">
           <div class="imagContainer">
             <p id="texto-superior">Tulum</p>
             <img class="imag" src="https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/zbuwrtwgs0ijmxkkg2r5">
@@ -102,7 +100,7 @@
     </div>
     <div class="row align-items-end">
       <div class="col">
-        <a href="file:///C:/Users/adrid/OneDrive/Documentos/ITESO/7%C2%B0/Web/proyecto/list_propi.html">
+        <a href="list_propi.html">
           <div class="imagContainer">
             <p id="texto-superior">Huasteca Potosina</p>
             <img class="imag" src="https://www.toursinlimites.com.mx/img/detail/huasteca_06.jpg">
@@ -110,7 +108,7 @@
         </a>
       </div>
       <div class="col">
-        <a href="file:///C:/Users/adrid/OneDrive/Documentos/ITESO/7%C2%B0/Web/proyecto/list_propi.html">
+        <a href="list_propi.html">
           <div class="imagContainer">
             <p id="texto-superior">Morelia</p>
             <img class="imag" src="https://mexicorutamagica.mx/wp-content/uploads/2021/12/callejon-del-romance.jpg">
@@ -118,7 +116,7 @@
         </a>
       </div>
       <div class="col">
-        <a href="file:///C:/Users/adrid/OneDrive/Documentos/ITESO/7%C2%B0/Web/proyecto/list_propi.html">
+        <a href="list_propi.html">
           <div class="imagContainer">
             <p id="texto-superior">Tapalpa</p>
             <img class="imag" src="https://antztours.com/revista/wp-content/uploads/2021/10/destacada-7.jpg">

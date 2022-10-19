@@ -1,11 +1,6 @@
 body{
 	background-color: #d5ded6;
-	padding-top: 100px;
-}
-.container_blur#blur.active{
-	filter: blur(20px);
-	pointer-events: none;
-	user-select: none;
+	
 }
 nav.navbar{
     background-color: #168d8d;
@@ -16,6 +11,15 @@ nav.navbar{
 	box-shadow: 9px 0px 2px black;
 	z-index: 1;
 }
+
+nav + section {
+	margin-top: 100px;
+}
+
+.active > nav + section {
+	margin-top: 0;
+}
+
 .col > a{
     display: inline;
     font-size: 20px;
@@ -217,4 +221,44 @@ button.new-post:active, a.new-post:active{
 #myForm.active{
 	visibility: visible;
 	opacity: 1;
+}
+.container_blur#blur.active{
+	filter: blur(20px);
+	pointer-events: none;
+	user-select: none;
+}
+a.log-sign-button{
+	text-decoration: none;
+}
+a.log-sign-button:hover{
+	color: white;
+	cursor: pointer;
+	border: 1px solid #13674e;
+	background-color: #13674e;
+}
+.imag {
+	width: 230px !important;
+	height: 200px !important;
+	position: relative;
+}
+
+.imagContainer {
+	position: relative;
+}
+
+.imagContainer > p {
+	position: absolute;
+    left: 5px;
+    right: 5px;
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: -3px 3px 3px #333;
+	z-index: 99;
+}
+
+.imagContainer > #texto-superior {
+    top: 5px;
 }
