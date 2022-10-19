@@ -174,15 +174,15 @@ nav.navbar{
 	right: 0;
 	margin-right: 5%;
 }
-button.new-post{
+button.new-post, a.new-post{
 	background-color: #114b5f;
 	color: white;
 }
-button.new-post:hover{
+button.new-post:hover, a.new-post:hover{
 	background-color: #0e3b4b;
 	color: white;
 }
-button.new-post:active{
+button.new-post:active, a.new-post:active{
 	background-color: #0e3b4b;
 	color: white;
 	border-color: white;
