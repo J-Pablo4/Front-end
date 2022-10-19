@@ -2,6 +2,11 @@ body{
 	background-color: #d5ded6;
 	padding-top: 100px;
 }
+.container_blur#blur.active{
+	filter: blur(20px);
+	pointer-events: none;
+	user-select: none;
+}
 nav.navbar{
     background-color: #168d8d;
 	padding-bottom: 9px;
@@ -152,12 +157,14 @@ nav.navbar{
 .fa-star:first-child{
 	margin-left: 10%;
 }
-button.new-post{
-	background-color: #114b5f;
-	color: white;
+#new-post-button{
 	position: absolute;
 	right: 0;
 	margin-right: 5%;
+}
+button.new-post{
+	background-color: #114b5f;
+	color: white;
 }
 button.new-post:hover{
 	background-color: #0e3b4b;
@@ -170,11 +177,11 @@ button.new-post:active{
 }
 #text-post{
 	resize: none;
-	font-size: 25px;
+	font-size: 20px;
 }
 #image-box{
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    height: 260px;
     border: 1px solid rgb(168, 168, 168);
     margin-top: 12px;
     position: relative;
@@ -183,4 +190,19 @@ button.new-post:active{
     /* background-image: url(''); */
     background-position: center;
 	margin-bottom: 10px;
+}
+.popup{
+	position: fixed;
+	top: 0; 
+	z-index: 2;
+	margin-top: 35px;
+}
+#myForm{
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+}
+#myForm.active{
+	visibility: visible;
+	opacity: 1;
 }
