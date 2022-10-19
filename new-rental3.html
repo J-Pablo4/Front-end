@@ -58,13 +58,123 @@
                             <hr>
                             <form action="" class="py-3 px-2">
                                 <input type="text" class="form-control input-new-rental" placeholder="Accommodation name..." style="margin-bottom: 20px;">
-                                <input type="text" class="form-control input-new-rental" placeholder="Location...">
-                            </form>
-                            <form action="" class="d-flex py-3 px-2">
-                                <label for="areas" class="fw-bold">Number Areas:</label>
-                                <button class="btn new-post fw-bold" style="margin-left: 10px">-</button>
-                                <input class="form-control" type="number" value="1" min="0" max="10" id="areas" readonly style="text-align:center">
-                                <button class="btn new-post fw-bold" style="margin-right: 68%;">+</button>
+                                <div class="d-flex py-3 px-2">
+                                  <label for="areas" class="fw-bold">Maximum Guests:</label>
+                                  <button class="btn new-post fw-bold" style="margin-left: 10px" id="menos">-</button>
+                                  <input class="form-control" type="number" value="1" min="1" max="10" id="areas" readonly style="text-align:center">
+                                  <button class="btn new-post fw-bold" style="margin-right: 64%;" id="mas">+</button>
+                                </div>
+                                <hr>
+                                <select class="form-select" aria-label="Default select" style="margin-bottom: 20px;">
+                                  <option selected>Select a country...</option>
+                                  <option value="1">Mexico</option>
+                                  <option value="2">Yemen</option>
+                                  <option value="3">Myanmar</option>
+                                  <option value="4">Switzerland</option>
+                                  <option value="5">Turquia</option>
+                                  <option value="6">Taiwan</option>
+                                  <option value="7">Malaysia</option>
+                                  <option value="8">Palestine</option>
+                                  <option value="9">North Korea</option>
+                                  <option value="10">Belarus</option>
+                                  <option value="10">Sweden</option>
+                                </select>
+                                <input type="text" class="form-control input-new-rental" placeholder="Street address..." style="margin-bottom: 20px; ">
+                                <input type="text" class="form-control input-new-rental" placeholder="Postal code..." style="margin-bottom: 20px;">
+                                <input type="text" class="form-control input-new-rental" placeholder="City..." style="margin-bottom: 20px;">
+                                <hr>
+                                <div class="d-flex py-3 px-2">
+                                  <label for="areas" class="fw-bold">Number Areas:</label>
+                                  <button class="btn new-post fw-bold" style="margin-left: 10px" id="menos">-</button>
+                                  <input class="form-control" type="number" value="1" min="1" max="10" id="areas" readonly style="text-align:center">
+                                  <button class="btn new-post fw-bold" style="margin-right: 67%;" id="mas">+</button>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                  <div class="col-lg-4">
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Breakfast</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Parking</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">TV</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Extinguisher</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Heater</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Toiletries</label>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-lg-4">
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Pool</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Bath</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Mini Bar</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Sauna</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Balcony</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Linen</label>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-lg-4">
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Garden</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Pet allowed</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Air conditioning</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Wifi</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Kitchen</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                      <label class="form-check-label" for="flexSwitchCheckDefault">Patio</label>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <hr>
+                                
                             </form>
                         </div>
                     </div>
@@ -74,5 +184,6 @@
       </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   </body>
 </html>
