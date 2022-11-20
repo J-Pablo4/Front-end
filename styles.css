@@ -12,8 +12,22 @@ nav.navbar{
 	z-index: 1;
 }
 
+nav .row{
+	width: 100%;
+}
+
 nav + section {
 	margin-top: 100px;
+}
+
+.header-last-column{
+	text-align: end;
+}
+.filter-button{
+	margin-right: 5%;
+}
+.center{
+	align-items: center;
 }
 
 .active > nav + section {
@@ -27,9 +41,6 @@ nav + section {
 #places{
     padding-left: 40px;
     padding-right: 40px;
-}
-#webpage_name{
-    margin-right: 400px;
 }
 #sign_up_button{
 	background-color: #114b5f;

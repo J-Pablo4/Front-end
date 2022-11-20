@@ -8,41 +8,42 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    
-    <nav class="navbar navbar-expand-lg shadow-lg mb-5">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="index.html" id="webpage_name" style="font-size: 30px">
-                <img src="LOGO.png" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
-                Top Trip
-            </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <nav class="navbar navbar-expand-lg shadow-lg mb-5 justify-content-center">
+      <div class="row">
+        <div class="col-lg-3">
+          <a class="navbar-brand fw-bold" href="index.html" id="webpage_name" style="font-size: 30px">
+            <img src="LOGO.png" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
+            Top Trip
+          </a>
+        </div>
+
+        <div class="col-lg-6">
+          <div>
+            <ul class="navbar-nav justify-content-center">
               <li class="nav-item">
                 <a class="nav-link header_button" href="index.html">Feed</a>
-              </li>
+              </li> 
               <li class="nav-item">
-                <a class="nav-link header_button" href="#" id="places">Places</a>
+                <a class="nav-link header_button" href="list_places.html" id="places">Places</a>                  
               </li>
               <li class="nav-item">
                 <a class="nav-link header_button" href="list_propi.html">Rentals</a> 
               </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn" type="submit">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                  </svg>
-                </button>
-            </form>
-            <a href="sign_up.html" class="btn" style="margin-left: 20px" id="sign_up_button"> Sign up</a>
-            <a href="log_in.html" class="btn" id="log_in_button"> Log In</a>
           </div>
         </div>
-      </nav>
+
+        <div class="col-lg-3 header-last-column">
+          <button class="btn filter-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </button>
+          <a href="sign_up.html" class="btn" id="sign_up_button"> Sign up</a>
+          <a href="log_in.html" class="btn" id="log_in_button"> Log In</a>
+        </div>
+      </div>
+    </nav>
 
       <section>
         <div class="container">
