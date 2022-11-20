@@ -44,7 +44,6 @@ function init_form()
         alert('The passwords are not the same.')
       }
     }
-
   });
 }
 
