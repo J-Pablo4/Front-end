@@ -157,19 +157,19 @@ nav + section {
 	margin: 20px 0 30px;
 }
 .profile-picture#post-general{
-	background-image: url('post1.jpg');
+	background-image: url('../post1.jpg');
 	background-size: cover;
 	width: 3rem;
 	height: 3rem;
 }
 .profile-picture#post-rental{
-	background-image: url('post2.jpg');
+	background-image: url('../post2.jpg');
 	background-size: cover;
 	width: 3rem;
 	height: 3rem;
 }
 .profile-picture#post-review{
-	background-image: url('post3.jpg');
+	background-image: url('../post3.jpg');
 	background-size: cover;
 	width: 3rem;
 	height: 3rem;
