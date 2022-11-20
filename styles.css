@@ -23,6 +23,9 @@ nav + section {
 .header-last-column{
 	text-align: end;
 }
+.filter-button{
+	margin-right: 5%;
+}
 .center{
 	align-items: center;
 }
