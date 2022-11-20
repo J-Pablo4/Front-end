@@ -12,8 +12,19 @@ nav.navbar{
 	z-index: 1;
 }
 
+nav .row{
+	width: 100%;
+}
+
 nav + section {
 	margin-top: 100px;
+}
+
+.header{
+	text-align: end;
+}
+.center{
+	align-items: center;
 }
 
 .active > nav + section {
