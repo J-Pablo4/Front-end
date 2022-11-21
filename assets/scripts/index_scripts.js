@@ -6,6 +6,8 @@ function toggle(){
   popup.classList.toggle('active');
 }
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.querySelector('input[type="file"]');
 
