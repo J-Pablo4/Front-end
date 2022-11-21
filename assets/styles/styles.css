@@ -214,8 +214,8 @@ button.new-post:active, a.new-post:active{
     position: relative;
 	border-style: dashed;
 	border-radius: 5px;
-    /* background-image: url(''); */
     background-position: center;
+	background-size: cover;
 	margin-bottom: 10px;
 }
 .popup{
