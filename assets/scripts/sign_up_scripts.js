@@ -31,7 +31,6 @@ function init_form()
     {
       if(sign_up_values.password === sign_up_values.password_r)
       {
-        console.log('se logro :D')
         axios.post('//localhost:3000/users/sign_up', sign_up_values).then((response) =>
         {
           console.log('success', response);
