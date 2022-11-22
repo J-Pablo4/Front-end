@@ -1,0 +1,22 @@
+.places .col{
+    height: 220px;
+    padding: 0;
+}
+
+section a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+section a:hover{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.852);
+    text-shadow: 2px 2px 4px black;
+}
+a .img{
+    width: 100%;
+    height: 100%;
+    background-image: url('../Switzerland.jpg');
+    background-size: cover;
+    background-position: center;
+}

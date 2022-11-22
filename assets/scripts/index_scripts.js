@@ -35,13 +35,13 @@ function init_form()
 
     console.log(new_post_values);
 
-    axios.post('//localhost:3000/publications/publish?token=123', new_post_values).then((response) =>
-        {
-          console.log('success', response);
-          window.location = '/index.html';
-        }).catch((err) =>   {
-          console.log(err);
-        });
+    // axios.post('//localhost:3000/publications/publish?token=123', new_post_values).then((response) =>
+    //     {
+    //       console.log('success', response);
+    //       window.location = '/index.html';
+    //     }).catch((err) =>   {
+    //       console.log(err);
+    //     });
   });
 }
 
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     reader.readAsDataURL(file);
+
   }
 
   init_form();
