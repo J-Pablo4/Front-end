@@ -15,33 +15,25 @@ function init_form()
     ev.preventDefault();
     console.log('Este es el evento:',ev);
 
-    let input_new = document.querySelectorAll('#new_post_form .input_new_post');
+    var input = document.querySelector('#new_post_form input[type="file"]')
+    var input_description = document.querySelector('#new_post_form textarea[name="description"]');
+    var input_place = document.querySelector('#new_post_form input[name="place"]');
 
-    input_new = [...input_new];
+    console.log()
 
-    const new_post_values =
-    {
-      photo: "",
-      description: "",
-      place: ""
-    }
+    var data = new FormData()
+    data.append('photo', input.files[0])
+    data.append('description', input_description.value);
+    data.append('place', input_place.value);
 
-    input_new.map((elem) => {
-      const value = elem.value;
-      const name = elem.name;
-
-      new_post_values[name] = value;
+    fetch('//localhost:3000/publications/publish?token=123', {
+      method: 'POST',
+      body: data
+    }).then(() => {
+      window.location = '/index.html';
+    }).catch((err) => {
+      console.log(err);
     });
-
-    console.log(new_post_values);
-
-    // axios.post('//localhost:3000/publications/publish?token=123', new_post_values).then((response) =>
-    //     {
-    //       console.log('success', response);
-    //       window.location = '/index.html';
-    //     }).catch((err) =>   {
-    //       console.log(err);
-    //     });
   });
 }
 
