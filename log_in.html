@@ -6,6 +6,8 @@
     <title>Top Trip</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles/styles.css">
+    <script src="./assets/scripts/log_in.js"></script>
+    <script src="./assets/scripts/scripts.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg shadow-lg mb-5 justify-content-center">
@@ -39,8 +41,8 @@
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg>
           </button>
-          <a href="sign_up.html" class="btn" id="sign_up_button"> Sign up</a>
-          <a href="log_in.html" class="btn" id="log_in_button"> Log In</a>
+          <a href="sign_up.html" class="btn auth" id="sign_up_button"> Sign up</a>
+          <a href="log_in.html" class="btn auth" id="log_in_button"> Log In</a>
         </div>
       </div>
     </nav>
@@ -48,10 +50,10 @@
     <section class="log_sign_content" style="margin-top: 100px">
       <div class="log_sign_card">
         <div class="form-container log-sign-container">
-          <form action="#">
+          <form action="#" id="log_in_form">
             <h1 class="log-sign-h">Login</h1>
-            <input type="email" name="" placeholder="Email or username" class="input_sign">
-            <input type="password" name="" placeholder="Password" class="input_sign">
+            <input type="email" name="correo" placeholder="Email or username" class="input_sign">
+            <input type="password" name="password" placeholder="Password" class="input_sign">
             <div class="form-check d-flex justify-content-center mb-5">
               </label>
             </div>
@@ -71,5 +73,7 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-client@0.2.1/jwt-client.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </body>
 </html>

@@ -273,3 +273,7 @@ a.log-sign-button:hover{
 .imagContainer > #texto-superior {
     top: 5px;
 }
+
+.auth, .unauth{
+	display: none;
+}

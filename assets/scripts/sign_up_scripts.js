@@ -1,4 +1,3 @@
-
 function init_form()
 {
   const sign_up = document.querySelector('#sign_up_form');
@@ -10,7 +9,7 @@ function init_form()
 
     input_sign = [...input_sign];
 
-    const sign_up_values = {
+    let sign_up_values = {
       nombre: "",
       correo: "",
       password: ""
@@ -23,7 +22,6 @@ function init_form()
       sign_up_values[name] = value;
     });
 
-    console.log(sign_up_values);
     if(sign_up_values.nombre === "" || sign_up_values.correo === "" || sign_up_values.password === "" || sign_up_values.password_r === "")
     {
       alert('One or more than one of the entries are empty.')
@@ -31,12 +29,14 @@ function init_form()
     {
       if(sign_up_values.password === sign_up_values.password_r)
       {
+        sign_up_values.password = JWT.encode64(sign_up_values.password);
+
         axios.post('//localhost:3000/users/sign_up', sign_up_values).then((response) =>
         {
           console.log('success', response);
           window.location = '/log_in.html';
         }).catch((err) =>   {
-          console.log(err);
+          console.log('Error', err);
         });
       }else
       {
@@ -45,8 +45,6 @@ function init_form()
     }
   });
 }
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     init_form();
