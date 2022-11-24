@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const other = document.querySelector('#other');
 
     house.addEventListener('click', () => {
-        localStorage.setItem('Type', 'house');
+        localStorage.setItem('Type', 'House');
     });
     apartment.addEventListener('click', () => {
-        localStorage.setItem('Type', 'apartment');
+        localStorage.setItem('Type', 'Apartment');
     });
     other.addEventListener('click', () => {
-        localStorage.setItem('Type', 'other');
+        localStorage.setItem('Type', 'Other');
     });
 });
