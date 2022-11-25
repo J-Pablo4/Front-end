@@ -79,7 +79,6 @@ function get_publications()
   `
       container.innerHTML += card;
     });
-    //Crear HTML
   }).catch((err) => {
     console.log('Hubo un error', err);
   });
