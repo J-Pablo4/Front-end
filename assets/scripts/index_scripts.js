@@ -49,10 +49,6 @@ function get_publications()
       const place = element.place;
       const description = element.description;
       const photo = element.photo.split('/').pop();
-
-      // let photo = respuesta.photo.replace(/^.*[\\\/]/, '');
-      // console.log(photo)
-      // photo = photo.split(' ').pop();
       const card = `
       <div class="card shadow-lg mb-5" style="margin-top: 50px">
       <div class="card-body d-flex">
@@ -106,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     reader.readAsDataURL(file);
-
   }
 
   init_form();
