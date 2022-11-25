@@ -28,7 +28,7 @@ function init_form()
       method: 'POST',
       body: data
     }).then(() => {
-      alert('Se creó una nueva publicación')
+      alert('Created a new post');
       window.location = '/index.html';
     }).catch((err) => {
       console.log(err);
@@ -49,10 +49,6 @@ function get_publications()
       const place = element.place;
       const description = element.description;
       const photo = element.photo.split('/').pop();
-
-      // let photo = respuesta.photo.replace(/^.*[\\\/]/, '');
-      // console.log(photo)
-      // photo = photo.split(' ').pop();
       const card = `
       <div class="card shadow-lg mb-5" style="margin-top: 50px">
       <div class="card-body d-flex">
@@ -83,7 +79,6 @@ function get_publications()
   `
       container.innerHTML += card;
     });
-    //Crear HTML
   }).catch((err) => {
     console.log('Hubo un error', err);
   });
@@ -106,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     reader.readAsDataURL(file);
-
   }
 
   init_form();
