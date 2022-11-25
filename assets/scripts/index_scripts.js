@@ -28,7 +28,7 @@ function init_form()
       method: 'POST',
       body: data
     }).then(() => {
-      alert('Se creó una nueva publicación')
+      alert('Created a new post');
       window.location = '/index.html';
     }).catch((err) => {
       console.log(err);
