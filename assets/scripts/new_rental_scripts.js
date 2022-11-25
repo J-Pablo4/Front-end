@@ -8,6 +8,8 @@ function init_form()
   {
     ev.preventDefault();
 
+    var input_type = localStorage.getItem('Type');
+    var input_category = localStorage.getItem('Category');
     var input_accommodation_name = document.querySelector('#new_rental_form input[name="accommodation_name"]')
     var input_maximum_guests = document.querySelector('#new_rental_form input[name="maximum_guests"]');
     var input_country = document.querySelector('#new_rental_form select[name="country"]');
@@ -15,12 +17,13 @@ function init_form()
     var input_postal_code = document.querySelector('#new_rental_form input[name="postal_code"]');
     var input_city = document.querySelector('#new_rental_form input[name="city"]');
     var input_number_of_bedrooms = document.querySelector('#new_rental_form input[name="number_of_bedrooms"]');
+    var input_description = document.querySelector('#new_rental_form textarea[name="description"]');
     var input_photo = document.querySelector('#new_rental_form input[name="photo"]');
     var input_price = document.querySelector('#new_rental_form input[name="price"]');
 
     var data = new FormData();
-    data.append('type', localStorage.getItem('Type'));
-    data.append('category', localStorage.getItem('Category'));
+    data.append('type', input_type);
+    data.append('category', input_category);
     data.append('accommodation_name', input_accommodation_name.value);
     data.append('maximum_guests', input_maximum_guests.value);
     data.append('country', input_country.value);
@@ -28,11 +31,12 @@ function init_form()
     data.append('postal_code', input_postal_code.value);
     data.append('city', input_city.value);
     data.append('number_of_bedrooms', input_number_of_bedrooms.value);
+    data.append('description', input_description.value);
     data.append('photo', input_photo.files[0]);
     data.append('price', input_price.value);
 
     const token = localStorage.getItem('token');
-    fetch('//localhost:3000/rentals/new-rental?token='+token, {
+    fetch('//localhost:3000/rentals?token='+token, {
       method: 'POST',
       body: data
     }).then(() => {
