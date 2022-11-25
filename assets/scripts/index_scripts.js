@@ -14,7 +14,7 @@ function init_form()
     ev.preventDefault();
     var input = document.querySelector('#new_post_form input[type="file"]')
     var input_description = document.querySelector('#new_post_form textarea[name="description"]');
-    var input_place = document.querySelector('#new_post_form input[name="place"]');
+    var input_place = document.querySelector('#new_post_form select[name="place"]');
 
     var data = new FormData()
     data.append('photo', input.files[0])
