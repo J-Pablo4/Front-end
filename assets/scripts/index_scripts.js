@@ -9,6 +9,7 @@ function toggle(){
 function init_form()
 {
   const new_post = document.querySelector('#new_post_form');
+
   new_post.addEventListener('submit', (ev) =>
   {
     ev.preventDefault();
@@ -21,15 +22,31 @@ function init_form()
     data.append('description', input_description.value);
     data.append('place', input_place.value);
     const token = localStorage.getItem('token');
-    fetch('//localhost:3000/publications/publish?token='+token, {
+
+    if(input.files[0] === undefined || input_description.value === "" || input_place.value === "")
+    {
+      alert('One or more than one of the entries are empty.');
+    }else
+    {
+      fetch('//localhost:3000/publications/publish?token='+token, {
       method: 'POST',
       body: data
-    }).then(() => {
-      alert('Se creó una nueva publicación')
-      window.location = '/index.html';
+    }).then((respuesta) => {
+      if(respuesta.status == 400)
+      {
+        alert('No estás autenticado');
+        localStorage.removeItem('token');
+        window.location = '/log_in.html';
+      }else
+      {
+        alert('Se creó una nueva publicación');
+        window.location = '/index.html';
+      }
     }).catch((err) => {
-      console.log(err);
+      console.log('Hubo un error', err);
     });
+    }
+    
   });
 }
 
@@ -46,7 +63,12 @@ function get_publications()
       const place = element.place;
       const description = element.description;
       const photo = element.photo.split('/').pop();
-      const card = `
+      const accommodation_name = element.accommodation_name;
+      let card;
+
+      if(accommodation_name == null)
+      {
+        card = `
       <div class="card shadow-lg mb-5" style="margin-top: 50px">
       <div class="card-body d-flex">
           <div class="d-flex">
@@ -74,6 +96,50 @@ function get_publications()
       </form>
   </div>
   `
+      }else
+      {
+        card = `
+        <div class="card shadow-lg mb-5" style="margin-top: 50px">
+                      <div class="card-body d-flex">
+                          <div class="d-flex">
+                            <div class="profile-picture rounded-circle" id="post-rental" style="margin-right: 20px"></div>
+                            <a href="#" class="text-dark text-decoration-none fw-bold align-self-center">${user_name}</a>
+                          </div>
+                      </div>
+                      <div style="margin-bottom: 15px">
+                        <p class="fw-bold" style="margin-left: 85px; display: inline; font-size: 18px; margin-right: 5px">Place:</p>
+                        <a href="list_places.html" class="text-dark text-decoration-none fw-bold" style="display: inline">${place}</a>
+                      </div>
+                      <hr>
+                      <h4 style="margin-left: 80px">${accommodation_name}</h4>
+                      <div class="d-flex" style="margin-bottom: 10px">
+                        <span class="text-dark text-decoration-none fw-bold" style="margin-left: 100px;">Rate:</span>
+                        <i class="fa fa-star checked align-self-center" style="margin-left: 20px;"></i>
+                        <i class="fa fa-star checked align-self-center"></i>
+                        <i class="fa fa-star checked align-self-center"></i>
+                        <i class="fa fa-star align-self-center"></i>
+                        <i class="fa fa-star align-self-center" style="margin-right: 10px"></i>
+                        <span class="text-dark text-decoration-none fw-bold" id="users_rate">Users 265</span>
+                      </div>
+                      <a href="rental.html">
+                        <img src="//localhost:3000/${photo}" alt="post" class="img-fluid" style="width: 900px;">
+                      </a>
+                      <div class="card-body">
+                        <div class="d-flex">
+                          <p>${description}</p>
+                        </div>
+                        <hr>
+                        <p class="mb-0"><a href="#" class="text-dark fw-bold text-decoration-none">viajesdemontaña</a> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, minima.</p>
+                        <p><a href="#" class="text-dark fw-bold text-decoration-none">casas_color_limon</a> Lorem ipsum, dolor sit amet consectetur</p>
+                        <small class="d-block text-muted">12 HOURS AGO</small>
+                      </div>
+                      <form class="d-flex border-top py-3 px-2">
+                        <input type="text" class="form-control border-0" placeholder="Comment...">
+                        <button type="submit" class="btn new-post unauth">Publish</button>
+                      </form>
+                  </div>
+        `
+      }
       container.innerHTML += card;
     });
   }).catch((err) => {
