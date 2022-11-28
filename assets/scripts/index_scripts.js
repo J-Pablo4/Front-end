@@ -9,6 +9,7 @@ function toggle(){
 function init_form()
 {
   const new_post = document.querySelector('#new_post_form');
+
   new_post.addEventListener('submit', (ev) =>
   {
     ev.preventDefault();
@@ -21,15 +22,31 @@ function init_form()
     data.append('description', input_description.value);
     data.append('place', input_place.value);
     const token = localStorage.getItem('token');
-    fetch('//localhost:3000/publications/publish?token='+token, {
+
+    if(input.files[0] === undefined || input_description.value === "" || input_place.value === "")
+    {
+      alert('One or more than one of the entries are empty.');
+    }else
+    {
+      fetch('//localhost:3000/publications/publish?token='+token, {
       method: 'POST',
       body: data
-    }).then(() => {
-      alert('Se creó una nueva publicación')
-      window.location = '/index.html';
+    }).then((respuesta) => {
+      if(respuesta.status == 400)
+      {
+        alert('No estás autenticado');
+        localStorage.removeItem('token');
+        window.location = '/log_in.html';
+      }else
+      {
+        alert('Se creó una nueva publicación');
+        window.location = '/index.html';
+      }
     }).catch((err) => {
-      console.log(err);
+      console.log('Hubo un error', err);
     });
+    }
+    
   });
 }
 

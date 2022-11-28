@@ -39,15 +39,22 @@ function init_form()
     fetch('//localhost:3000/rentals?token='+token, {
       method: 'POST',
       body: data
-    }).then(() => {
-      alert('Created a new rental');
-      window.location = '/index.html';
+    }).then((respuesta) => {
+      if(respuesta.status == 400)
+      {
+        alert('No estás autenticado');
+        localStorage.removeItem('token');
+        window.location = '/log_in.html';
+      }else
+      {
+        alert('Se dio de alta una nueva propiedad');
+        window.location = '/list_propi.html';
+      }
     }).catch((err) => {
-      console.log(err);
+      console.log('Hubo un error', err);
     });
   });
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     
   const fileInput = document.querySelector('input[type="file"]');
