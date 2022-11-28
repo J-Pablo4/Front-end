@@ -23,7 +23,7 @@ function init_form()
 
     if(log_in_values.correo === "" || log_in_values.password === "")
     {
-      alert('One or more than one of the entries are empty.')
+      alert('One or more than one of the entries are empty.');
     }else
     {
         log_in_values.password = JWT.encode64(log_in_values.password);
