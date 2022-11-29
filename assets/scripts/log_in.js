@@ -35,13 +35,13 @@ function init_form()
 
             window.location = '/index.html';
         }).catch((err) =>   {
-          console.log('Error', err);
-        
+          alert("Incorrect email or password");
         });
     }
   });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
     init_form();
 });
