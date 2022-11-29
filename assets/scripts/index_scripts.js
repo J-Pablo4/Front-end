@@ -56,8 +56,6 @@ function get_publications()
     const publications = respuesta.data;
     const container = document.getElementById('publications');
 
-    console.log(respuesta.data);
-
     publications.forEach(element => {
       const user_name = element.user_name;
       const place = element.place;
@@ -73,7 +71,9 @@ function get_publications()
       <div class="card-body d-flex">
           <div class="d-flex">
             <div class="profile-picture rounded-circle" id="post-general" style="margin-right: 20px"></div>
-            <a href="#" class="text-dark text-decoration-none fw-bold align-self-center">${user_name}</a>
+            <div class="align-self-center">
+              <a href="#" class="text-dark text-decoration-none fw-bold">${user_name}</a>
+            </div>
           </div>
       </div>
       <div style="margin-bottom: 15px">
@@ -142,6 +142,31 @@ function get_publications()
       }
       container.innerHTML += card;
     });
+
+    if(logged())
+    {
+        const elements_to_remove = document.querySelectorAll('.auth');
+        const elements_to_show = document.querySelectorAll('.unauth');
+
+        elements_to_remove.forEach((elem) => {
+            elem.remove();
+        });
+
+        elements_to_show.forEach((elem) => {
+            elem.classList.remove('unauth');
+        });
+    }else{
+        const elements_to_remove = document.querySelectorAll('.unauth');
+        const elements_to_show = document.querySelectorAll('.auth');
+
+        elements_to_remove.forEach((elem) => {
+            elem.remove();
+        });
+
+        elements_to_show.forEach((elem) => {
+            elem.classList.remove('auth');
+        });
+    }
   }).catch((err) => {
     console.log('Hubo un error', err);
   });
