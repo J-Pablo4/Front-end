@@ -53,8 +53,9 @@ function init_form()
 function get_publications()
 {
   axios.get('//localhost:3000/publications').then((respuesta) => {
-    const publications = respuesta.data;
+    const publications = respuesta.data.reverse();
     const container = document.getElementById('publications');
+    let count_id = 0;
 
     publications.forEach(element => {
       const user_name = element.user_name;
@@ -62,6 +63,8 @@ function get_publications()
       const description = element.description;
       const photo = element.photo.split('/').pop();
       const accommodation_name = element.accommodation_name;
+      const rental_id = element.rental_id;
+
       let card;
 
       if(accommodation_name == null)
@@ -78,7 +81,7 @@ function get_publications()
       </div>
       <div style="margin-bottom: 15px">
         <p class="fw-bold" style="margin-left: 85px; display: inline; font-size: 18px; margin-right: 5px">Place:</p>
-        <a href="#" class="text-dark text-decoration-none fw-bold" style="display: inline">${place}</a>
+        <a href="./list_propi.html?place=${place}" class="text-dark text-decoration-none fw-bold" style="display: inline">${place}</a>
       </div>
       <img src="//localhost:3000/${photo}" alt="post" class="img-fluid" style="width: 900px;">
       <div class="card-body">
@@ -90,12 +93,13 @@ function get_publications()
         <p><a href="#" class="text-dark fw-bold text-decoration-none">casas_color_limon</a> Lorem ipsum, dolor sit amet consectetur</p>
         <small class="d-block text-muted">12 HOURS AGO</small>
       </div>
-      <form class="d-flex border-top py-3 px-2">
-        <input type="text" class="form-control border-0" placeholder="Comment...">
+      <form class="d-flex border-top py-3 px-2 comment-form">
+        <input type="text" name="comment" class="form-control border-0" id="comment-${count_id}" placeholder="Comment...">
         <button type="submit" class="btn new-post unauth">Publish</button>
       </form>
   </div>
   `
+  count_id +=1;
       }else
       {
         card = `
@@ -108,7 +112,7 @@ function get_publications()
                       </div>
                       <div style="margin-bottom: 15px">
                         <p class="fw-bold" style="margin-left: 85px; display: inline; font-size: 18px; margin-right: 5px">Place:</p>
-                        <a href="list_places.html" class="text-dark text-decoration-none fw-bold" style="display: inline">${place}</a>
+                        <a href="./list_propi.html?place=${place}" class="text-dark text-decoration-none fw-bold" style="display: inline">${place}</a>
                       </div>
                       <hr>
                       <h4 style="margin-left: 80px">${accommodation_name}</h4>
@@ -121,7 +125,7 @@ function get_publications()
                         <i class="fa fa-star align-self-center" style="margin-right: 10px"></i>
                         <span class="text-dark text-decoration-none fw-bold" id="users_rate">Users 265</span>
                       </div>
-                      <a href="rental.html">
+                      <a href="rental.html?id=${rental_id}">
                         <img src="//localhost:3000/${photo}" alt="post" class="img-fluid" style="width: 900px;">
                       </a>
                       <div class="card-body">
@@ -133,12 +137,13 @@ function get_publications()
                         <p><a href="#" class="text-dark fw-bold text-decoration-none">casas_color_limon</a> Lorem ipsum, dolor sit amet consectetur</p>
                         <small class="d-block text-muted">12 HOURS AGO</small>
                       </div>
-                      <form class="d-flex border-top py-3 px-2">
-                        <input type="text" class="form-control border-0" placeholder="Comment...">
+                      <form class="d-flex border-top py-3 px-2 comment-form">
+                        <input type="text" name="comment" class="form-control border-0" id="comment-${count_id}" placeholder="Comment...">
                         <button type="submit" class="btn new-post unauth">Publish</button>
                       </form>
                   </div>
         `
+        count_id +=1;
       }
       container.innerHTML += card;
     });
@@ -167,6 +172,34 @@ function get_publications()
             elem.classList.remove('auth');
         });
     }
+    
+    const comments = document.querySelectorAll("form.comment-form");
+
+    let counter_id = 0
+    comments.forEach(element => {
+      element.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        var input_comment = document.querySelector(`input#comment-${counter_id}`);
+        let yourDate = new Date();
+        yourDate.toISOString().split('T')[0];
+        
+        let comment_values = {
+          user_name: "",
+          comment: "",
+          time: "",
+          publication_id: ""
+        }
+        comment_values.comment = input_comment.value;
+        comment_values.user_name = respuesta.data[counter_id].user_name;
+        comment_values.publication_id = respuesta.data[counter_id]._id;
+        comment_values.time = yourDate;
+
+        console.log(comment_values);
+
+        counter_id += 1;
+      });
+    });
+
   }).catch((err) => {
     console.log('Hubo un error', err);
   });
