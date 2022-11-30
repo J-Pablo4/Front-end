@@ -146,12 +146,13 @@ function rental(id)
           </div>
         </div>
                 <div class="col-lg-4">
+                <form id="aqui">
                     <div class="card mb-5" style="margin-top: 50px; position:fixed; width: 320px;">
                       <div class="card-body d-flex" >
                         <div class="Rental_info " style="width:325px ;">
                           <div class="fw-bold">${rental.accommodation_name}</div>
                           <div>${rental.city}, ${rental.country}</div>
-                          <div>${rental.maximum_guests} bedroom - ${rental.maximum_guests} guest</div>
+                          <div>${rental.number_of_bedrooms} bedroom - ${rental.maximum_guests} guest</div>
                           <div class="d-flex" style="margin-bottom: 10px">
                             <i class="fa fa-star align-self-center"></i>
                             <i class="fa fa-star align-self-center"></i>
@@ -161,6 +162,7 @@ function rental(id)
                             <span class="font-size: small" id="users_rate">  - 265 ratings</span>
                           </div>
                           <hr>
+
                           <div class="row">
                             <div class="col-lg-6">
                               Check-in
@@ -196,10 +198,11 @@ function rental(id)
                       </div>
                     </div>
                     <div>
-                      <button type="button" class="btn new-post shadow-lg mb-5 unauth" style="width: 320px; height: 42px; position: fixed; margin-top: 570px">
+                      <button id="aqui_boton" class="btn new-post shadow-lg mb-5 unauth" style="width: 320px; height: 42px; position: fixed; margin-top: 570px">
                         Book Rental
                       </button>
                     </div>
+                  </form>
                   </div>
                   <div class="col-lg-8">
                     <div class="card mb-5" style="margin-top: 50px">
@@ -259,6 +262,59 @@ function rental(id)
             elem.classList.remove('auth');
         });
     }
+
+    const book_form = document.querySelector('form#aqui');
+
+    book_form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+
+      let check_in = document.querySelector('#targetCI');
+      let check_out = document.querySelector('#targetCO');
+      let adults = document.querySelector("#adults");
+      let kids = document.querySelector("#kids");
+      let pets = document.querySelector("#pets");
+      let total = parseInt(adults.value, 10) + parseInt(kids.value, 10) + parseInt(pets.value, 10);
+
+      let book_values = {
+        check_in: check_in.value,
+        check_out: check_out.value,
+        adults: adults.value,
+        kids: kids.value,
+        pets: pets.value,
+        total: total,
+        publication_id: id
+      }
+      if(check_in.value == "" || check_out.value == "")
+      {
+        alert('One, or more, of the fields is empty.');
+      }else
+      {
+        if(check_in.value <= check_out.value)
+        {
+          if(total <= rental.maximum_guests)
+          {
+            const token = localStorage.getItem('token');
+            axios.put('//localhost:3000/rentals/book?token='+token, book_values).then((response) =>
+            {
+              alert('The rental was booked');
+              document.getElementById('aqui_boton').disabled = true;
+            }).catch((err) =>   {
+              console.log(err);
+              alert('No estás autenticado');
+              localStorage.removeItem('token');
+              window.location = '/log_in.html';
+            });
+          }else
+          {
+            alert("The guests introduced exceeds the accommodation's maximum guests.");
+          }
+        }else
+        {
+          alert('Inconsistences in dates');
+        }
+      }
+
+    });
   }).catch((err) => {
     console.log('Hubo un error', err);
   });
