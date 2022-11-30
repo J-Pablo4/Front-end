@@ -5,8 +5,6 @@ function rental(id)
     const rental = respuesta.data;
     const photo = rental.photo.split('/').pop();
 
-    console.log(rental);
-
     const card = `
     <div class="container" style="margin-top: 100px">
         <div class="row">
