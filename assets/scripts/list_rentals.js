@@ -4,8 +4,6 @@ function get_rentals()
     const rentals = respuesta.data;
     const body = document.getElementById('body');
 
-    console.log(respuesta.data);
-
     rentals.forEach(element => {
       const accommodation_name = element.accommodation_name;
       const description = element.description;
@@ -53,8 +51,6 @@ function list_rentals_by_places(place)
   axios.get('//localhost:3000/rentals/places/'+place).then((respuesta) => {
     const rentals = respuesta.data;
     const body = document.getElementById('body');
-
-    console.log(respuesta.data);
 
     rentals.forEach(element => {
       const accommodation_name = element.accommodation_name;
