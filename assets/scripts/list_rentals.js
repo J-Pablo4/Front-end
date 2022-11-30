@@ -33,7 +33,6 @@ function get_rentals()
                     <a href="rental.html?id=${element._id}" type="button" class="btn new-post">See more</a>
                   </div> 
                 </div>
-                
               </div>
             </div>
           </div>
