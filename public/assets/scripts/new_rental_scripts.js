@@ -36,7 +36,7 @@ function init_form()
     data.append('price', input_price.value);
 
     const token = localStorage.getItem('token');
-    fetch('//localhost:3000/rentals?token='+token, {
+    fetch('https://back-top-trip.herokuapp.com/rentals?token='+token, {
       method: 'POST',
       body: data
     }).then((respuesta) => {

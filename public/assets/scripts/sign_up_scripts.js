@@ -31,7 +31,7 @@ function init_form()
       {
         sign_up_values.password = JWT.encode64(sign_up_values.password);
 
-        axios.post('//localhost:3000/users/sign_up', sign_up_values).then((response) =>
+        axios.post('https://back-top-trip.herokuapp.com/users/sign_up', sign_up_values).then((response) =>
         {
           console.log('success', response);
           window.location = '/log_in.html';
