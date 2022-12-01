@@ -28,7 +28,7 @@ function init_form()
       alert('One or more than one of the entries are empty.');
     }else
     {
-      fetch('https://back-top-trip.herokuapp.com/publications/publish?token='+token, {
+      fetch('https://back-top-trip-backend.herokuapp.com/publications/publish?token='+token, {
       method: 'POST',
       body: data
     }).then((respuesta) => {
@@ -52,7 +52,7 @@ function init_form()
 
 function get_publications()
 {
-  axios.get('https://back-top-trip.herokuapp.com/publications').then((respuesta) => {
+  axios.get('https://back-top-trip-backend.herokuapp.com/publications').then((respuesta) => {
     const publications = respuesta.data.reverse();
     const container = document.getElementById('publications');
 
@@ -84,7 +84,7 @@ function get_publications()
         <p class="fw-bold" style="margin-left: 85px; display: inline; font-size: 18px; margin-right: 5px">Place:</p>
         <a href="./list_propi.html?place=${place}" class="text-dark text-decoration-none fw-bold" style="display: inline">${place}</a>
       </div>
-      <img src="https://back-top-trip.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
+      <img src="https://back-top-trip-backend.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
       <div class="card-body">
         <div class="d-flex">
           <p>${description}</p>
@@ -113,7 +113,7 @@ function get_publications()
         <p class="fw-bold" style="margin-left: 85px; display: inline; font-size: 18px; margin-right: 5px">Place:</p>
         <a href="./list_propi.html?place=${place}" class="text-dark text-decoration-none fw-bold" style="display: inline">${place}</a>
       </div>
-      <img src="https://back-top-trip.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
+      <img src="https://back-top-trip-backend.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
       <div class="card-body">
         <div class="d-flex">
           <p>${description}</p>
@@ -144,7 +144,7 @@ function get_publications()
         <p class="fw-bold" style="margin-left: 85px; display: inline; font-size: 18px; margin-right: 5px">Place:</p>
         <a href="./list_propi.html?place=${place}" class="text-dark text-decoration-none fw-bold" style="display: inline">${place}</a>
       </div>
-      <img src="https://back-top-trip.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
+      <img src="https://back-top-trip-backend.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
       <div class="card-body">
         <div class="d-flex">
           <p>${description}</p>
@@ -188,7 +188,7 @@ function get_publications()
                         <span class="text-dark text-decoration-none fw-bold" id="users_rate">Users 265</span>
                       </div>
                       <a href="rental.html?id=${rental_id}">
-                        <img src="https://back-top-trip.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
+                        <img src="https://back-top-trip-backend.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
                       </a>
                       <div class="card-body">
                         <div class="d-flex">
@@ -228,7 +228,7 @@ function get_publications()
                         <span class="text-dark text-decoration-none fw-bold" id="users_rate">Users 265</span>
                       </div>
                       <a href="rental.html?id=${rental_id}">
-                        <img src="https://back-top-trip.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
+                        <img src="https://back-top-trip-backend.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
                       </a>
                       <div class="card-body">
                         <div class="d-flex">
@@ -270,7 +270,7 @@ function get_publications()
                         <span class="text-dark text-decoration-none fw-bold" id="users_rate">Users 265</span>
                       </div>
                       <a href="rental.html?id=${rental_id}">
-                        <img src="https://back-top-trip.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
+                        <img src="https://back-top-trip-backend.herokuapp.com/${photo}" alt="post" class="img-fluid" style="width: 900px;">
                       </a>
                       <div class="card-body">
                         <div class="d-flex">
@@ -337,7 +337,7 @@ function get_publications()
         comment_values.time = yourDate;
 
         const token = localStorage.getItem('token');
-        axios.put('https://back-top-trip.herokuapp.com/publications?token='+token, comment_values).then((response) =>
+        axios.put('https://back-top-trip-backend.herokuapp.com/publications?token='+token, comment_values).then((response) =>
         {
           window.location = '/index.html';
         }).catch((err) =>   {

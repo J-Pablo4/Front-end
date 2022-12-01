@@ -28,7 +28,7 @@ function init_form()
     {
         log_in_values.password = JWT.encode64(log_in_values.password);
 
-        axios.post('https://back-top-trip.herokuapp.com/users/log_in', log_in_values).then((response) =>
+        axios.post('https://back-top-trip-backend.herokuapp.com/users/log_in', log_in_values).then((response) =>
         {
             
             set_token(response.data.token);

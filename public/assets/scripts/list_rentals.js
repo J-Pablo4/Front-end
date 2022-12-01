@@ -1,6 +1,6 @@
 function get_rentals()
 {
-  axios.get('https://back-top-trip.herokuapp.com/rentals').then((respuesta) => {
+  axios.get('https://back-top-trip-backend.herokuapp.com/rentals').then((respuesta) => {
     const rentals = respuesta.data;
     const body = document.getElementById('body');
 
@@ -17,7 +17,7 @@ function get_rentals()
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-6 d-flex align-items-center order-1 order-lg-1">
-                  <img src="https://back-top-trip.herokuapp.com/${photo}"
+                  <img src="https://back-top-trip-backend.herokuapp.com/${photo}"
                     class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-2">
@@ -48,7 +48,7 @@ function get_rentals()
 
 function list_rentals_by_places(place)
 {
-  axios.get('https://back-top-trip.herokuapp.com/rentals/places/'+place).then((respuesta) => {
+  axios.get('https://back-top-trip-backend.herokuapp.com/rentals/places/'+place).then((respuesta) => {
     const rentals = respuesta.data;
     const body = document.getElementById('body');
 
@@ -65,7 +65,7 @@ function list_rentals_by_places(place)
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-6 d-flex align-items-center order-1 order-lg-1">
-                  <img src="https://back-top-trip.herokuapp.com/${photo}"
+                  <img src="https://back-top-trip-backend.herokuapp.com/${photo}"
                     class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-2">

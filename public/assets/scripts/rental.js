@@ -1,6 +1,6 @@
 function rental(id)
 {
-    axios.get('https://back-top-trip.herokuapp.com/rentals/'+id).then((respuesta) => {
+    axios.get('https://back-top-trip-backend.herokuapp.com/rentals/'+id).then((respuesta) => {
     const body = document.getElementById('body');
     const rental = respuesta.data;
     const photo = rental.photo.split('/').pop();
@@ -10,7 +10,7 @@ function rental(id)
         <div class="row">
           <div class="col-lg-8">
             <div class="card shadow-lg mb-5" style="margin-top: 50px">
-            <img src="https://back-top-trip.herokuapp.com/${photo}" class="img-fluid" alt="Sample image">
+            <img src="https://back-top-trip-backend.herokuapp.com/${photo}" class="img-fluid" alt="Sample image">
             </div>
             <div class="card">
               <div class="card-body">
@@ -294,7 +294,7 @@ function rental(id)
           if(total <= rental.maximum_guests)
           {
             const token = localStorage.getItem('token');
-            axios.put('https://back-top-trip.herokuapp.com/rentals/book?token='+token, book_values).then((response) =>
+            axios.put('https://back-top-trip-backend.herokuapp.com/rentals/book?token='+token, book_values).then((response) =>
             {
               alert('The rental was booked');
               document.getElementById('aqui_boton').disabled = true;
